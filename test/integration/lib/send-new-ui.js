@@ -128,10 +128,10 @@ async function runSendFlowTest(assert, done) {
   selectState.val('send edit')
   reactTriggerChange(selectState[0])
 
-  const confirmFromName = (await queryAsync($, '.confirm-screen-account-name')).first()
+  const confirmFromName = (await queryAsync($, '.sender-to-recipient__sender-name')).first()
   assert.equal(confirmFromName[0].textContent, 'Send Account 2', 'confirm screen should show correct from name')
 
-  const confirmToName = (await queryAsync($, '.confirm-screen-account-name')).last()
+  const confirmToName = (await queryAsync($, '.sender-to-recipient__recipient-name')).last()
   assert.equal(confirmToName[0].textContent, 'Send Account 3', 'confirm screen should show correct to name')
 
   const confirmScreenRows = await queryAsync($, '.confirm-screen-rows')
