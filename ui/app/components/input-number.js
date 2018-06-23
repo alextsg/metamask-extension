@@ -2,10 +2,8 @@ const Component = require('react').Component
 const h = require('react-hyperscript')
 const inherits = require('util').inherits
 const {
-  addCurrencies,
   conversionGTE,
   conversionLTE,
-  subtractCurrencies,
 } = require('../conversion-util')
 
 module.exports = InputNumber
@@ -23,7 +21,10 @@ function isValidInput (text) {
 }
 
 InputNumber.prototype.setValue = function (newValue) {
-  if (newValue && !isValidInput(newValue)) return
+  if (newValue !== '' && !isValidInput(newValue)) {
+    return
+  }
+
   const { fixed, min = -1, max = Infinity, onChange } = this.props
 
   newValue = fixed ? newValue.toFixed(4) : newValue
@@ -47,7 +48,7 @@ InputNumber.prototype.setValue = function (newValue) {
 }
 
 InputNumber.prototype.render = function () {
-  const { unitLabel, step = 1, placeholder, value = 0 } = this.props
+  const { unitLabel, step = 1, placeholder, value = 0, min = -1, max = Infinity } = this.props
 
   return h('div.customize-gas-input-wrapper', {}, [
     h('input', {
@@ -63,11 +64,11 @@ InputNumber.prototype.render = function () {
     h('span.gas-tooltip-input-detail', {}, [unitLabel]),
     h('div.gas-tooltip-input-arrows', {}, [
       h('i.fa.fa-angle-up', {
-        onClick: () => this.setValue(addCurrencies(value, step)),
+        onClick: () => this.setValue(Math.min(+value + step, max)),
       }),
       h('i.fa.fa-angle-down', {
         style: { cursor: 'pointer' },
-        onClick: () => this.setValue(subtractCurrencies(value, step)),
+        onClick: () => this.setValue(Math.max(+value - step, min)),
       }),
     ]),
   ])

@@ -31,7 +31,7 @@ module.exports = {
   isTokenBalanceSufficient,
 }
 
-function calcGasTotal (gasLimit, gasPrice) {
+function calcGasTotal (gasLimit = '0', gasPrice = '0') {
   return multiplyCurrencies(gasLimit, gasPrice, {
     toNumericBase: 'hex',
     multiplicandBase: 16,
@@ -41,9 +41,9 @@ function calcGasTotal (gasLimit, gasPrice) {
 
 function isBalanceSufficient ({
   amount = '0x0',
-  amountConversionRate = 0,
-  balance,
-  conversionRate,
+  amountConversionRate = 1,
+  balance = '0x0',
+  conversionRate = 1,
   gasTotal = '0x0',
   primaryCurrency,
 }) {

@@ -54,6 +54,7 @@ function MetamaskInpageProvider (connectionStream) {
 // also remap ids inbound and outbound
 MetamaskInpageProvider.prototype.sendAsync = function (payload, cb) {
   const self = this
+  console.log('SENDASYNC')
   self.rpcEngine.handle(payload, cb)
 }
 

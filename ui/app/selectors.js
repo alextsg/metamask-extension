@@ -28,6 +28,7 @@ const selectors = {
   autoAddToBetaUI,
   getSendMaxModeState,
   getCurrentViewContext,
+  getTotalUnapprovedCount,
 }
 
 module.exports = selectors
@@ -185,4 +186,16 @@ function autoAddToBetaUI (state) {
 function getCurrentViewContext (state) {
   const { currentView = {} } = state.appState
   return currentView.context
+}
+
+function getTotalUnapprovedCount ({ metamask }) {
+  const {
+    unapprovedTxs = {},
+    unapprovedMsgCount,
+    unapprovedPersonalMsgCount,
+    unapprovedTypedMessagesCount,
+  } = metamask
+
+  return Object.keys(unapprovedTxs).length + unapprovedMsgCount + unapprovedPersonalMsgCount +
+    unapprovedTypedMessagesCount
 }

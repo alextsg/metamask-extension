@@ -40,6 +40,9 @@
     "message": "MetaMask",
     "description": "The name of the application"
   },
+  "approve": {
+    "message": "Approve"
+  },
   "approved": {
     "message": "Approved"
   },
@@ -88,6 +91,9 @@
   },
   "buyCoinbaseExplainer": {
     "message": "Coinbase is the world’s most popular way to buy and sell bitcoin, ethereum, and litecoin."
+  },
+  "bytes": {
+    "message": "Bytes"
   },
   "ok": {
     "message": "Ok"
@@ -145,6 +151,9 @@
   },
   "copy": {
     "message": "Copy"
+  },
+  "copyAddress": {
+    "message": "Copy address to clipboard"
   },
   "copyToClipboard": {
     "message": "Copy to clipboard"
@@ -312,6 +321,9 @@
   "fromShapeShift": {
     "message": "From ShapeShift"
   },
+  "functionType": {
+    "message": "Function Type"
+  },
   "gas": {
     "message": "Gas",
     "description": "Short indication of gas cost"
@@ -363,6 +375,9 @@
   },
   "hereList": {
     "message": "Here's a list!!!!"
+  },
+  "hexData": {
+    "message": "Hex Data"
   },
   "hide": {
     "message": "Hide"
@@ -575,6 +590,9 @@
   "or": {
     "message": "or",
     "description": "choice between creating or importing a new account"
+  },
+  "origin": {
+    "message": "Origin"
   },
   "password": {
     "message": "Password"
@@ -895,6 +913,9 @@
   },
   "transactionNumber": {
     "message": "Transaction Number"
+  },
+  "transfer": {
+    "message": "Transfer"
   },
   "transfers": {
     "message": "Transfers"
